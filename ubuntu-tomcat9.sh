@@ -16,6 +16,7 @@ sudo tar xf /tmp/apache-tomcat-9*.tar.gz -C /opt/tomcat
 sudo ln -s /opt/tomcat/apache-tomcat-${VERSION} /opt/tomcat/latest
 sudo chown -RH tomcat: /opt/tomcat/latest
 sudo sh -c 'chmod +x /opt/tomcat/latest/bin/*.sh'
+sudo sed -i 's/8080/8081/' /opt/tomcat/latest/conf/server.xml
 sudo cp tomcat.service /etc/systemd/system
 sudo systemctl daemon-reload
 
